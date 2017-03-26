@@ -21,6 +21,9 @@ new_user2 = User.create!(admin: false,
 new_order = Order.create!(total_cost: 300.00, payment_stage: 1)
 new_user1.orders << new_order
 new_order.user_id = new_user1.id
+
+
 #new_order.products << Product.first
 #new_order.user << new_user1
 #new_user1.orders << new_order
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

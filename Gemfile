@@ -41,6 +41,7 @@ gem 'kaminari'
 gem 'mini_magick'
 gem 'carrierwave', '~> 1.0'
 gem 'simple_form_fancy_uploads'
+gem 'activeadmin', github: 'activeadmin'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
