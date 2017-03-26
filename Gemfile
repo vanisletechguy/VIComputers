@@ -32,6 +32,15 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'devise'
+gem 'pundit'
+gem 'faker', '~> 1.7', '>= 1.7.3'
+gem 'simple_form'
+gem 'bcrypt'
+gem 'kaminari'
+gem 'mini_magick'
+gem 'carrierwave', '~> 1.0'
+gem 'simple_form_fancy_uploads'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
