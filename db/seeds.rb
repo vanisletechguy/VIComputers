@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+1.upto(50).each do |num|
+  Product.create! name: 'Product' + num.to_s, description: 'some description',
+  image: File.open(File.join(Rails.root, '/public/default.jpg')), cost: 99.99, availibility: 10
+end
