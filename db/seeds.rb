@@ -8,5 +8,5 @@
 
 1.upto(50).each do |num|
   Product.create! name: 'Product' + num.to_s, description: 'some description',
-  image: File.open(File.join(Rails.root, '/public/default.jpg')), cost: 99.99, availibility: 10
+  image: File.open(File.join(Rails.root, '/app/assets/images/default.jpg')), cost: 99.99, availibility: 10
 end
