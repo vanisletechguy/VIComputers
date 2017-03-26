@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    #@product = Product.find(product_params[:id])
+    @product = Product.find(product_params)
     @order = Order.new()
   end
 
@@ -74,6 +74,6 @@ class OrdersController < ApplicationController
     end
 
     def product_params
-      #params.require(:product).permit(:id, :cost, :name)
+      params.require(:product_id)
     end
 end

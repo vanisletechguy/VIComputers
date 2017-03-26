@@ -1,10 +1,12 @@
 <%= simple_form_for(@order) do |f| %>
   <%= f.error_notification %>
 
-  <!-- <div class="form-inputs">
+  <td><%= image_tag @product.image %></td>
+  <div class="form-inputs">
     <%= f.input :total_cost %>
+    <%= f.input :product_ids %>
     <%= f.input :payment_stage %>
-  </div> -->
+  </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
