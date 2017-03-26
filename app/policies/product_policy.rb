@@ -1,15 +1,18 @@
 class ProductPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      scope.where(user_id: @user.try(:id))
     end
   end
 
+  def show?
+  end
+
   def edit?
-    user.admin == true
+    @user.try(:admin) == true
   end
 
   def destroy?
-    user.admin == true
+    @user.try(:admin) == true
   end
 end
