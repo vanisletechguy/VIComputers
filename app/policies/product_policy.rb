@@ -1,7 +1,8 @@
 class ProductPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user_id: @user.try(:id))
+      #scope.where(user_id: @user.try(:id))
+      scope
     end
   end
 
@@ -9,10 +10,10 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def edit?
-    @user.try(:admin) == true
+    user && user.admin == true
   end
 
   def destroy?
-    @user.try(:admin) == true
+    user && user.admin == true
   end
 end

@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
   #before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
   after_action :verify_authorized, except: [:index]
-  after_action :verify_policy_scoped, only: [:index]
+  #after_action :verify_policy_scoped, only: [:index]
+  
   # GET /products
   # GET /products.json
   def index
