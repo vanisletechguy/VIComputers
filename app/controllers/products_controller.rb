@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   #before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index]
-  after_action :verify_authorized, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
+  after_action :verify_authorized, except: [:index, :show]
   #after_action :verify_policy_scoped, only: [:index]
-  
+
   # GET /products
   # GET /products.json
   def index
@@ -73,7 +73,7 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
-      authorize @product
+      #authorize @product
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
