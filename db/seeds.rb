@@ -10,3 +10,10 @@
   Product.create! name: 'Product' + num.to_s, description: 'some description',
   image: File.open(File.join(Rails.root, '/app/assets/images/default.jpg')), cost: 99.99, availibility: 10
 end
+
+new_user = User.create!(admin: true,
+                  email: 'admin@vicpu.com',
+                  password: 'abc1234')
+new_user = User.create!(admin: false,
+                  email: Faker::Internet.free_email,
+                  password: 'abc1234')
