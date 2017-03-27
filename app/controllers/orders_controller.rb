@@ -18,9 +18,9 @@ class OrdersController < ApplicationController
     @user = User.find(user_params)
     @order = Order.new()
     @order.payment_stage = 'not_submited'
-    @order.products << @product
-    #@product.orders << @order
-    #@order.user << @user
+    #@order.products << @product
+    @product.orders << @order
+    @user.orders << @order
     @order.user_id = @user.id
 
   end
