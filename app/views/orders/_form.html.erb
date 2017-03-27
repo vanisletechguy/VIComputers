@@ -1,32 +1,47 @@
 <p>
+  <strong>New Order For:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>UserID:</strong>
+  <%= @user.id %>
+</p>
+
+
+<td><%= image_tag @product.image %></td>
+<p>
   <strong>Item Name:</strong>
   <%= @product.name %>
 </p>
 
 <p>
-  <strong>Item Name:</strong>
+  <strong>Item Price:</strong>
   <%= @product.cost %>
 </p>
-
 
 <p>
   <strong>PAYMENT STAGE:</strong>
   <%= @order.payment_stage %>
+  <%= 'Confirm and click Order' if @order.payment_stage == 'not_submited' %>
 </p>
 
-<p>
-  <strong>Processing Stage:</strong>
-  <%= 'Confirm and click Order' if @order.payment_stage == 0 %>
-</p>
+
 
 <%= simple_form_for(@order) do |f| %>
   <%= f.error_notification %>
 
-  <td><%= image_tag @product.image %></td>
+
   <div class="form-inputs">
     <%= f.input :total_cost %>
     <%= f.input :product_ids %>
-    <%= f.input :payment_stage %>
+
+    <%= f.input :user_id, :as => :hidden, :user_id => { :user_id => @user.id }%>
+
+
+
+
+
   </div>
 
   <div class="form-actions">

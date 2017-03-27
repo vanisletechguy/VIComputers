@@ -15,9 +15,13 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @product = Product.find(product_params)
+    @user = User.find(user_params)
     @order = Order.new()
-    @order.payment_stage == 0
+    @order.payment_stage = 'not_submited'
     @order.products << @product
+    #@product.orders << @order
+    #@order.user << @user
+    @order.user_id = @user.id
 
   end
 
@@ -29,9 +33,13 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-
+    @user = User.find(ProductPolicy.current_user)
+    @order.user_id = @user.id
+    @order.payment_stage = 1
+    @user.orders << @order
     respond_to do |format|
       if @order.save
+
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
@@ -78,5 +86,9 @@ class OrdersController < ApplicationController
 
     def product_params
       params.require(:product_id)
+    end
+
+    def user_params
+      params.require(:user_id)
     end
 end
