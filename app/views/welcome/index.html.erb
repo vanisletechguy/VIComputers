@@ -1,2 +1,14 @@
 <p></p>
 <h1> WELCOME TO VANCOUVER ISLAND COMPUTERS</h1>
+
+<table class="table table-bordered">
+
+  <tbody>
+    <% @categories.each do |category| %>
+        <td><p><%= category.name %></p>
+          <%= link_to products_path do %>
+        <%= image_tag category.image %></td>
+        <% end %>
+    <% end %>
+  </tbody>
+</table>

@@ -19,6 +19,7 @@ caseCategory = Category.create! name:'Cases', image: File.open(File.join(Rails.r
   image: File.open(File.join(Rails.root, '/app/assets/images/cpu.jpg')), cost: 99.99, availibility: 10
   newProduct.categories << cpuCategory
   cpuCategory.products << newProduct
+  cpuCategory.image = newProduct.image
 end
 
 1.upto(5).each do |num|
@@ -26,6 +27,7 @@ end
   image: File.open(File.join(Rails.root, '/app/assets/images/motherboards.jpg')), cost: 99.99, availibility: 10
   newProduct.categories << moboCategory
   moboCategory.products << newProduct
+  moboCategory.image = newProduct.image
 end
 
 1.upto(5).each do |num|
@@ -33,6 +35,7 @@ end
   image: File.open(File.join(Rails.root, '/app/assets/images/ram.jpg')), cost: 99.99, availibility: 10
   newProduct.categories << ramCategory
   ramCategory.products << newProduct
+  ramCategory.image = newProduct.image
 end
 
 1.upto(5).each do |num|
@@ -40,6 +43,7 @@ end
   image: File.open(File.join(Rails.root, '/app/assets/images/psu.jpg')), cost: 99.99, availibility: 10
   newProduct.categories << psuCategory
   psuCategory.products << newProduct
+  psuCategory.image = newProduct.image
 end
 
 1.upto(5).each do |num|
@@ -47,6 +51,7 @@ end
   image: File.open(File.join(Rails.root, '/app/assets/images/ssd.jpeg')), cost: 99.99, availibility: 10
   newProduct.categories << ssdCategory
   ssdCategory.products << newProduct
+  ssdCategory.image = newProduct.image
 end
 
 
@@ -55,6 +60,7 @@ end
   image: File.open(File.join(Rails.root, '/app/assets/images/case.jpg')), cost: 99.99, availibility: 10
   newProduct.categories << caseCategory
   caseCategory.products << newProduct
+  caseCategory.image = newProduct.image
 end
 
 
