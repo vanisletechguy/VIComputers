@@ -10,6 +10,9 @@ class ProductPolicy < ApplicationPolicy
   def show?
   end
 
+  def show_orders?
+    current_user.present?
+  end
   def order?
     current_user.present?
   end

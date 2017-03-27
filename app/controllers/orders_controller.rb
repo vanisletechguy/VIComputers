@@ -1,10 +1,15 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!
 
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @user = ProductPolicy.current_user
+    #authorize @user
+    #@orders = Order.all
+    @orders = @user.orders
+    @orders = Order.all if @user.admin
   end
 
   # GET /orders/1
