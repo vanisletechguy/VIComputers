@@ -16,6 +16,9 @@ class OrdersController < ApplicationController
   def new
     @product = Product.find(product_params)
     @order = Order.new()
+    @order.payment_stage == 0
+    @order.products << @product
+
   end
 
   # GET /orders/1/edit

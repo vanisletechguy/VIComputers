@@ -6,10 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+moboCategory = Category.create! name:'Motherboards'
+
 1.upto(50).each do |num|
-  Product.create! name: 'Product' + num.to_s, description: 'some description',
+  newProduct = Product.create! name: 'Product' + num.to_s, description: 'some description',
   image: File.open(File.join(Rails.root, '/app/assets/images/default.jpg')), cost: 99.99, availibility: 10
+  newProduct.categories << moboCategory
+  moboCategory.products << newProduct
 end
+
 
 new_user1 = User.create!(admin: true,
                   email: 'admin@vicpu.com',
@@ -20,6 +25,7 @@ new_user2 = User.create!(admin: false,
 
 new_order = Order.create!(total_cost: 300.00, payment_stage: 1)
 new_user1.orders << new_order
+#new_order.user << new_user1
 new_order.user_id = new_user1.id
 
 
