@@ -13,11 +13,11 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  database: d1qq9ic2rvuq7u
+  database: vicpupg
   pool: 5
-  username: ipjnjfpeyiwjka
-  password: 2e42a3b325ad18770c2600dd0e18310998ae605ee68a210fc362106f0d997d82
-  host: ec2-54-204-1-40.compute-1.amazonaws.com
+  username: vicpupg
+  password: vicpupg
+  host: localhost
   timeout: 5000
 
 
@@ -31,11 +31,11 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: d1qq9ic2rvuq7u
+  database: vicpupg
   pool: 5
-  username: ipjnjfpeyiwjka
-  password: 2e42a3b325ad18770c2600dd0e18310998ae605ee68a210fc362106f0d997d82
-  host: ec2-54-204-1-40.compute-1.amazonaws.com
+  username: vicpupg
+  password: vicpupg
+  host: localhost
   timeout: 5000
 
 
