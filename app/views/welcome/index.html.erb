@@ -6,9 +6,31 @@
   <tbody>
     <% @categories.each do |category| %>
         <td><p><%= category.name %></p>
+
           <%= link_to category_processor_path do %>
-        <%= image_tag category.image %></td>
-        <% end %>
+            <%= image_tag category.image %></td>
+          <% end if category.name == "CPU"  %>
+
+          <%= link_to category_motherboard_path do %>
+            <%= image_tag category.image %></td>
+          <% end if category.name == "Motherboards"  %>
+
+          <%= link_to category_motherboard_path do %>
+            <%= image_tag category.image %></td>
+          <% end if category.name == "RAM"  %>
+
+          <%= link_to category_motherboard_path do %>
+            <%= image_tag category.image %></td>
+          <% end if category.name == "Power Supplies"  %>
+
+          <%= link_to category_motherboard_path do %>
+            <%= image_tag category.image %></td>
+          <% end if category.name == "SSD"  %>
+
+          <%= link_to category_motherboard_path do %>
+            <%= image_tag category.image %></td>
+          <% end if category.name == "Cases"  %>
+
     <% end %>
   </tbody>
 </table>
