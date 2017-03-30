@@ -1,29 +1,68 @@
 class CategoryController < ApplicationController
   def processor
-    #@products = Products.find { |'CPU'|  }
-
-    #@products = Product.where(name: 'CPU')
-    @category = Category.where(name: 'CPU')
-    #@products = Product.where(:categories => @category)
-    @products = Product.all
-    #@products = Product.where(categories.first.id: @category.id)
+    @all_products = Product.all
+    @products = Array.new
+    @all_products.each do |product|
+      if product.categories.first.name == 'CPU'
+        @products << product
+      end
+    end
 
 
   end
 
   def motherboard
+    @all_products = Product.all
+    @products = Array.new
+    @all_products.each do |product|
+      if product.categories.first.name == 'Motherboards'
+        @products << product
+      end
+    end
   end
 
   def ram
+    @category = Category.where(name: 'RAM')
+    @all_products = Product.all
+    @products = Array.new
+    @all_products.each do |product|
+      if product.categories.first.name == 'RAM'
+        @products << product
+      end
+    end
   end
 
   def ssd
+    @category = Category.where(name: 'Power Supplies')
+    @all_products = Product.all
+    @products = Array.new
+    @all_products.each do |product|
+      if product.categories.first.name == 'Power Supplies'
+        @products << product
+      end
+    end
   end
 
   def psu
+    @category = Category.where(name: 'SSD')
+    @all_products = Product.all
+    @products = Array.new
+    @all_products.each do |product|
+      if product.categories.first.name == 'SSD'
+        @products << product
+      end
+    end
   end
 
   def cases
+    @category = Category.where(name: 'Cases')
+    @all_products = Product.all
+    @products = Array.new
+    @all_products.each do |product|
+      if product.categories.first.name == 'Cases'
+        @products << product
+      end
+    end
   end
 
 
