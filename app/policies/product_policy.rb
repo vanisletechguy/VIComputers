@@ -10,6 +10,9 @@ class ProductPolicy < ApplicationPolicy
   def show?
   end
 
+  def new_product?
+    user && user.admin == true
+  end
   def show_orders?
     current_user.present?
   end
